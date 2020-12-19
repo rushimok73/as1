@@ -1,5 +1,9 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+from .models import Question
 
 
 def owner(request):
-       return HttpResponse("Hello, world. 04ef3263 is the polls index.")
+       question_list = Question.objects.all()
+       print(question_list)
+       context  = {'q':question_list}
+       return render(request, 'polls/index.html', context)

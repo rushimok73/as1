@@ -1,0 +1,9 @@
+<h1>{{ q.question_text }}</h1>
+<h1>{{q}}</h1> 
+<ul>
+{% for choice in q.choice_set.all %}
+    <li>{{ choice.choice_text }}</li>
+{% endfor %}
+</ul>
+
+<p>Hello, world. 04ef3263 is the polls index.s</p>
